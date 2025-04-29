@@ -1,0 +1,28 @@
+C:\Users\pichulo\Desktop\Stuff\Code\C#\Simon\bin\Debug\Simon.exe.config
+C:\Users\pichulo\Desktop\Stuff\Code\C#\Simon\bin\Debug\Simon.exe
+C:\Users\pichulo\Desktop\Stuff\Code\C#\Simon\bin\Debug\Simon.pdb
+C:\Users\pichulo\Desktop\Stuff\Code\C#\Simon\obj\Debug\Simon.csprojResolveAssemblyReference.cache
+C:\Users\pichulo\Desktop\Stuff\Code\C#\Simon\obj\Debug\Simon.Properties.Resources.resources
+C:\Users\pichulo\Desktop\Stuff\Code\C#\Simon\obj\Debug\Simon.csproj.GenerateResource.Cache
+C:\Users\pichulo\Desktop\Stuff\Code\C#\Simon\obj\Debug\Simon.exe
+C:\Users\pichulo\Desktop\Stuff\Code\C#\Simon\obj\Debug\Simon.pdb
+C:\Users\pichulo\Desktop\Stuff\Code\C#\Simon\obj\Debug\Simon.frmSimon.resources
+C:\My Stuff\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\bin\Debug\Simon.exe.config
+C:\My Stuff\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.exe
+C:\My Stuff\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.pdb
+C:\My Stuff\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\bin\Debug\Simon.exe
+C:\My Stuff\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\bin\Debug\Simon.pdb
+C:\My Stuff\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.csprojResolveAssemblyReference.cache
+C:\My Stuff\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.frmSimon.resources
+C:\My Stuff\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.Properties.Resources.resources
+C:\My Stuff\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.csproj.GenerateResource.Cache
+D:\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\bin\Debug\Simon.exe.config
+D:\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.exe
+D:\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.pdb
+D:\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\bin\Debug\Simon.exe
+D:\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\bin\Debug\Simon.pdb
+D:\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.csprojResolveAssemblyReference.cache
+D:\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.frmSimon.resources
+D:\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.Properties.Resources.resources
+D:\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.csproj.GenerateResource.Cache
+D:\ITT Tech\App Development with VS SD4550\Project\Simon\Simon\obj\Debug\Simon.frmScores.resources
