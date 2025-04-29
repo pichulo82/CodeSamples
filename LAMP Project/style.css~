@@ -1,0 +1,88 @@
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body { background-color: #000000; }
+
+#container {
+	background-color: #FFFFFF;
+	
+	font-family: "Times New Roman";
+	
+	width: 1000px;
+	min-height: 100%;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	padding:0px;
+}
+
+#header
+{
+	background-color: #FF0000;
+	border-bottom: 1px solid #303030;
+	padding-top: 15px;
+}
+
+#header > p > a:visited { color: #000000; }
+#header > p > a:visited { color: #000000; }
+#header > p > a:hover { color: #0000FF; }
+
+#header h1
+{
+	margin: 0px;
+	font-family: Garamond;
+	color: #FFFFFF;
+}
+
+th { text-align: left; }
+
+#content { padding: 5px; overflow: hidden; }
+#content > a:hover { color: #FF0000; }
+
+/* style to contain the movie image and description so it may be centered  */
+#movieView
+{
+	width: 800px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+
+#cartView
+{
+	width: 600px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+/* style for the image of movie */
+#imgFloat
+{
+	float: left;
+	height: 400px;
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-right: 20px;
+}
+
+a, a:visited
+{
+	color: #000000;
+	font-weight: bold;
+}
+
+a:hover { color: #FF0000; }
+
+#description { font-size: 17px; }
+
+/* place space between the table and the cart view */
+#cartButtons { margin-top: 20px; }
+

@@ -1,0 +1,29 @@
+<?php
+
+	/* 
+		layout.php
+
+	*/
+
+	$header =
+	"<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Movie Spot</title>
+			<link rel='stylesheet' type='text/css' href='./style.css' />
+			<link rel='stylesheet' type='text/css' href='./productsStyle.css' />
+		</head>
+		<body>
+			<div id='container'>
+				<div id='header'>
+					<h1 style='text-align:center;'>MovieSpot</h1>
+					<p style='text-align:center;'><a href='./index.php?view_cart=1'>View Cart</a></p>
+				</div>
+				<div id = 'content'>";
+
+					$footer = "</div><!-- End content-->
+			</div><!-- End container-->
+		</body>
+	</html>";
+	
+?>
