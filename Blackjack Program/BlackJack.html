@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BlackJack</title>
+
+  <Script type = "text/JavaScript">
+
+    var cards = new Array( 52 ); // array to store image path of cards
+    var points = new Array( 52 ); // array to store the points of the card
+    var cardsDrawn = new Array( 12 ); // array to store the random numbers which draw each
+                                      // card so that there are no duplicates
+
+    // create an image object in the cards array
+    for ( i = 0; i < 52; i++ )
+    {
+		cards[ i ] = new Image();
+	}
+
+    // store images in memory
+    cards[ 0 ].src = "Images/AceClubs.jpg";
+    cards[ 1 ].src = "Images/AceDiamonds.jpg";
+    cards[ 2 ].src = "Images/AceHearts.jpg";
+    cards[ 3 ].src = "Images/AceSpades.jpg";
+    cards[ 4 ].src = "Images/DeuceClubs.jpg";
+    cards[ 5 ].src = "Images/DeuceDiamonds.jpg";
+    cards[ 6 ].src = "Images/DeuceHearts.jpg";
+    cards[ 7 ].src = "Images/DeuceSpades.jpg";
+    cards[ 8 ].src = "Images/ThreeClubs.jpg";
+    cards[ 9 ].src = "Images/ThreeDiamonds.jpg";
+    cards[ 10 ].src = "Images/ThreeHearts.jpg";
+    cards[ 11 ].src = "Images/ThreeSpades.jpg";
+    cards[ 12 ].src = "Images/FourClubs.jpg";
+    cards[ 13 ].src = "Images/FourDiamonds.jpg";
+    cards[ 14 ].src = "Images/FourHearts.jpg";
+    cards[ 15 ].src = "Images/FourSpades.jpg";
+    cards[ 16 ].src = "Images/FiveClubs.jpg";
+    cards[ 17 ].src = "Images/FiveDiamonds.jpg";
+    cards[ 18 ].src = "Images/FiveHearts.jpg";
+    cards[ 19 ].src = "Images/FiveSpades.jpg";
+    cards[ 20 ].src = "Images/SixClubs.jpg";
+    cards[ 21 ].src = "Images/SixDiamonds.jpg";
+    cards[ 22 ].src = "Images/SixHearts.jpg";
+    cards[ 23 ].src = "Images/SixSpades.jpg";
+    cards[ 24 ].src = "Images/SevenClubs.jpg";
+    cards[ 25 ].src = "Images/SevenDiamonds.jpg";
+    cards[ 26 ].src = "Images/SevenHearts.jpg";
+    cards[ 27 ].src = "Images/SevenSpades.jpg";
+    cards[ 28 ].src = "Images/EightClubs.jpg";
+    cards[ 29 ].src = "Images/EightDiamonds.jpg";
+    cards[ 30 ].src = "Images/EightHearts.jpg";
+    cards[ 31 ].src = "Images/EightSpades.jpg";
+    cards[ 32 ].src = "Images/NineClubs.jpg";
+    cards[ 33 ].src = "Images/NineDiamonds.jpg";
+    cards[ 34 ].src = "Images/NineHearts.jpg";
+    cards[ 35 ].src = "Images/NineSpades.jpg";
+    cards[ 36 ].src = "Images/TenClubs.jpg";
+    cards[ 37 ].src = "Images/TenDiamonds.jpg";
+    cards[ 38 ].src = "Images/TenHearts.jpg";
+    cards[ 39 ].src = "Images/TenSpades.jpg";
+    cards[ 40 ].src = "Images/JackClubs.jpg";
+    cards[ 41 ].src = "Images/JackDiamonds.jpg";
+    cards[ 42 ].src = "Images/JackHearts.jpg";
+	cards[ 43 ].src = "Images/JackSpades.jpg";
+    cards[ 44 ].src = "Images/QueenClubs.jpg";
+    cards[ 45 ].src = "Images/QueenDiamonds.jpg";
+    cards[ 46 ].src = "Images/QueenHearts.jpg";
+    cards[ 47 ].src = "Images/QueenSpades.jpg";
+    cards[ 48 ].src = "Images/KingClubs.jpg";
+    cards[ 49 ].src = "Images/KingDiamonds.jpg";
+    cards[ 50 ].src = "Images/KingHearts.jpg";
+    cards[ 51 ].src = "Images/KingSpades.jpg";
+
+    // store the points of each card
+    points[ 0 ] = 11; // Aces
+    points[ 1 ] = 11;
+    points[ 2 ] = 11;
+    points[ 3 ] = 11;
+    points[ 4 ] = 2; // Deuces
+    points[ 5 ] = 2;
+    points[ 6 ] = 2;
+    points[ 7 ] = 2;
+    points[ 8 ] = 3; // Threes
+    points[ 9 ] = 3;
+    points[ 10 ] = 3;
+    points[ 11 ] = 3;
+    points[ 12 ] = 4; // Fours
+    points[ 13 ] = 4;
+    points[ 14 ] = 4;
+    points[ 15 ] = 4;
+    points[ 16 ] = 5; // Fives
+    points[ 17 ] = 5;
+    points[ 18 ] = 5;
+    points[ 19 ] = 5;
+    points[ 20 ] = 6; // Sixes
+    points[ 21 ] = 6;
+    points[ 22 ] = 6;
+    points[ 23 ] = 6;
+    points[ 24 ] = 7; // Sevens
+    points[ 25 ] = 7;
+    points[ 26 ] = 7;
+    points[ 27 ] = 7;
+    points[ 28 ] = 8; // Eights
+    points[ 29 ] = 8;
+    points[ 30 ] = 8;
+    points[ 31 ] = 8;
+    points[ 32 ] = 9; // Nines
+    points[ 33 ] = 9;
+    points[ 34 ] = 9;
+    points[ 35 ] = 9;
+    points[ 36 ] = 10; // Tens through Kings
+    points[ 37 ] = 10;
+    points[ 38 ] = 10;
+    points[ 39 ] = 10;
+    points[ 40 ] = 10;
+    points[ 41 ] = 10;
+    points[ 42 ] = 10;
+    points[ 43 ] = 10;
+    points[ 44 ] = 10;
+    points[ 45 ] = 10;
+    points[ 46 ] = 10;
+    points[ 47 ] = 10;
+    points[ 48 ] = 10;
+    points[ 49 ] = 10;
+    points[ 50 ] = 10;
+    points[ 51 ] = 10;
+
+    var cardNumber = 0; // the random number to draw card
+    var imageIndex = 8; // the image where the card image loads into
+
+    var dealersCard = 0; // store the hidden card of dealer
+	var playerPoints = 0; // total points for player
+	var dealerPoints = 0;
+	var aceFlagPlayer; // when an ace is dealt to player
+	var aceFlagDealer; // when an ace is dealt to dealer
+
+    // function to deal cards for new game
+    function start()
+    {
+		var blackjack = false; // flag when someone has blackjack
+		aceFlagPlayer = false
+		aceFlagDealer = false
+		var cardCount = 0;
+		playerPoints = 0;
+		dealerPoints = 0;
+
+		// alert( "blackjack = " + blackjack );
+
+		// initialize cardsDrawn Array
+		for ( i = 0; i < 12; i++ )
+		{
+			// set to -1 to ensure random number will not be found the first time through
+			cardsDrawn[ i ] = -1;
+		}
+
+		// initialize visual components
+		document.getElementById( "stand" ).disabled = false;
+		document.getElementById( "hitMe" ).disabled = false;
+		document.getElementById( "dealerMessage" ).innerHTML = "";
+		document.getElementById( "playerMessage" ).innerHTML = "";
+		document.getElementById( "playAgain" ).style.visibility = "hidden";
+
+		// generate random number to draw first card
+		cardNumber = Math.floor( Math.random() * 52 );
+		dealersCard = cardNumber; // saves index of dealer's face-down card
+
+		// deal dealer's face-down card
+		document.images[ cardCount ].src = cards[ cardNumber ].src;
+   		document.images[ cardCount ].style.visibility = "visible";
+
+   		// turn over card after dealer's first card has been dealt
+   		document.images[ 0 ].src = "Images/CardBack.jpg";
+
+   		// store the card number drawn so same card is not re-dealt
+   		cardsDrawn[ cardCount ] = cardNumber;
+
+   		// add total points for dealer's cards
+		dealerPoints += points[ cardNumber ];
+
+		// an ace is dealt
+		if ( points[ cardNumber ] == 11 ) aceFlagDealer = true;
+
+		// loop to deal cards beginning with second card
+		for ( cardCount = 1; cardCount < 11; cardCount++ )
+		{
+			cardNumber = Math.floor( Math.random() * 52 );
+
+			// This is the second card drawn. The loop keeps generating a random number until it is
+			// not the same as the first so that a card is not re-dealt
+
+			// loop through cardsDrawn array to see if number has been generated already
+			for ( i = 0; i < 12; i++ )
+			{
+				// found a number already called
+				if ( cardsDrawn[ i ] == cardNumber )
+				{
+					// alert( "Card already drawn !!\n\nThe number is " + cardNumber +
+						// ". The image for this card is " + cards[ cardNumber ].src.substring( 6, cards[ cardNumber ].length ) );
+					i = 0; // restart the loop
+					cardNumber = Math.floor( Math.random() * 52 );
+				}
+			}
+
+			// store the random number in the cardsDrawn array to keep track of cards drawn
+			cardsDrawn[ cardCount ] = cardNumber;
+
+			// deal dealer's face-up card
+			document.images[ cardCount ].src = cards[ cardNumber ].src;
+    		document.images[ cardCount ].style.visibility = "visible";
+
+    		// add points to dealer
+    		// dealer dealt two or more aces
+    		if ( points[ cardNumber ] == 11 && aceFlagDealer == true )
+    		{
+				dealerPoints += 1;
+
+			} else {
+				// dealer's points tallied here on deal
+				dealerPoints += points[ cardNumber ];
+			}
+
+    		// after first card shown (dealer's card) is dealt
+    		if ( cardCount == 1 )
+    		{
+				// hide any of the dealer's visible cards from previous games
+				for ( cardCount = 2; cardCount < 6; cardCount++ )
+				{
+					document.images[ cardCount ].style.visibility = "hidden";
+				}
+// ********* end dealer cards here **********
+
+				// hide and deal player's cards
+				// cards 6 and 7 are player's new cards. 8 - 11 are the cards to hide
+				for ( cardCount = 6; cardCount < 12; cardCount++ )
+				{
+					// when re-dealt, visible cards need to clear
+					if ( cardCount <= 7 ) // deals two cards to player (cards 5 and 6)
+					{
+						cardNumber = Math.floor( Math.random() * 52 );
+
+						// loop through cardsDrawn array to see if number has been generated already
+						for ( i = 0; i < 12; i++ )
+						{
+							// found a number already called
+							if ( cardsDrawn[ i ] == cardNumber )
+							{
+								// alert( "Card already drawn !!\n\nThe number is " + cardNumber );
+								i = 0; // restart the loop
+								cardNumber = Math.floor( Math.random() * 52 );
+							}
+						}
+
+						// display the player's cards
+						document.images[ cardCount ].src = cards[ cardNumber ].src;
+						document.images[ cardCount ].style.visibility = "visible";
+
+						// alert( "Line 255: cardCount = " + cardCount );
+
+	    				// an ace has not been dealt
+	    				if ( aceFlagPlayer == false )
+	    				{
+	    				    //alert( "I made it here at line 258!\n\n The card value is " + points[ cardNumber ] +
+								// "Player points are " + playerPoints + "\nAceFlag = " + aceFlagPlayer );
+
+	    					// an ace is dealt
+	    					if ( points[ cardNumber ] == 11 )
+	    					{
+								aceFlagPlayer = true;
+								// alert( "I made it here at line 263!\n\n The card value is " + points[ cardNumber ] +
+									// "Player points are " + playerPoints + "\nAceFlag = " + aceFlag );
+							}
+
+							// add total points for player's cards
+							playerPoints += points[ cardNumber ];
+
+						} else { // an ace was previously dealt
+
+							// alert( "I made it here at line 274!\n\n The card value is " + points[ cardNumber ] +
+							//	"\nPlayer points are " + playerPoints + "\nAceFlag = " + aceFlag );
+
+							// another ace is dealt
+							if ( points[ cardNumber ] == 11 )
+							{
+								// add player points
+								playerPoints += 1 // ace is worth one
+								// alert( "got another ace (line 283)" );
+
+
+							} else { // another ace not dealt
+
+								// add point normally
+								playerPoints += points[ cardNumber ];
+
+								//alert( "I made it here at line 288!\n\n The card value is " + points[ cardNumber ] +
+								//	"\nPlayer points are " + playerPoints + "\nAceFlag = " + aceFlag );
+							}
+						}
+
+					} else { // cardCount is greater than 7, hide remaining images on re-deal
+						document.images[ cardCount ].style.visibility = "hidden";
+					}
+
+					// store the random number in the cardsDrawn array to keep track of cards drawn
+					cardsDrawn[ cardCount ] = cardNumber;
+				} // end nested for
+			}
+		} // end outer for
+
+		// reset dealer and player points display
+		document.getElementById( "dealerPoints" ).innerHTML = "Points: ";
+		document.getElementById( "playerPoints" ).innerHTML = "Points: " + playerPoints;
+
+		// if player or dealer has blackjack
+		if ( dealerPoints == 21 || playerPoints == 21 )
+		{
+			blackjack = true;
+			stand( blackjack );
+			document.getElementById( "stand" ).disabled = true;
+		}
+		
+		document.getElementById( 'debugText' ).value = "aceFlagPlayer = " + aceFlagPlayer;
+
+	} // end function start
+
+    // function to deal card when hit
+    function draw()
+    {
+		cardNumber = Math.floor( Math.random() * 52 );
+
+		// document.getElementById( "debugText" ).value = "aceFlagDealer = " + aceFlagDealer;
+		document.getElementById( "debugText" ).value = "aceFlagPlayer = " + aceFlagPlayer;
+
+		// document.getElementById( "debugText" ).value = "X = " + x++;
+
+		// loop through cardsDrawn array to see if number has been generated already
+		for ( i = 0; i < 12; i++ )
+		{
+			// found a number already called
+			if ( cardsDrawn[ i ] == cardNumber )
+			{
+				// restart the loop
+				// alert( "Card already drawn !!\n\nThe number is " + cardNumber +
+					// ". The image for this card is " + cards[ cardNumber ].src.substring( 6, cards[ cardNumber ].length ) );
+				cardNumber = Math.floor( Math.random() * 52 );
+				i = 0;
+			}
+		}
+
+    	if ( imageIndex < 12 )
+    	{
+    		document.images[ imageIndex ].src = cards[ cardNumber ].src;
+    		document.images[ imageIndex ].style.visibility = "visible";
+
+    		++imageIndex;
+		}
+
+    	calculatePoints( cardNumber );
+	} // end function draw
+
+	function stand( blackjack )
+	{
+		// blackjack is a flag when stand is called at deal. If someone has Blackjack, no one
+		// can take a hit
+
+		var bust = false;
+		var hits = 2; // set starting image index
+		document.images[ 0 ].src = cards[ dealersCard ].src; // reveal dealer's hidden card
+
+		//if ( blackjack == false ) // dealer hits only when player does not have blackjack
+		//{
+			// dealer stands at 17
+			while ( dealerPoints < 17 )
+			{
+				// hit the dealer when score under 17
+				cardNumber = Math.floor( Math.random() * 52 );
+
+				// loop through cardsDrawn array to see if number has been generated already
+				for ( i = 0; i < 12; i++ )
+				{
+					// found a number already called
+					if ( cardsDrawn[ i ] == cardNumber )
+					{
+						// restart the loop
+						// alert( "Card already drawn !!\n\nThe number is " + cardNumber +
+							// ". The image for this card is " + cards[ cardNumber ].src.substring( 6, cards[ cardNumber ].length ) );
+						i = 0;
+
+						// generate new random number
+						cardNumber = Math.floor( Math.random() * 52 );
+					}
+				}
+
+				document.images[ hits ].src = cards[ cardNumber ].src;
+				document.images[ hits ].style.visibility = "visible";
+				
+				// playerPoints = playerPoints + 1 * aceCount;
+
+				// calculate the dealer's score
+				
+				// ** what needs to happen with the aces is any time a card is drawn that tallies the score
+				// beyond 21, at least on of the aces needs to be treated as one. I could track all the values
+				// drawn in an array and loop through it each time to re-tally the cards. Any time the loop
+				// finds an ace, multiply the aceCount by 1, then add aceCount to the score.
+
+				// ace is drawn
+				if ( points[ cardNumber ] == 11 && dealerPoints > 21 )
+				{
+					++aceCount;
+					dealerPoints = dealerPoints + 1 * aceCount;
+				} else {
+				
+					dealerPoints += points[ cardNumber ];
+				}
+				
+				++hits;
+			} // end while
+		//}
+
+		document.getElementById( "dealerPoints" ).innerHTML = "Points: " + dealerPoints;
+
+		imageIndex = 8;
+
+		gameEnd( blackjack, bust );
+	}
+
+	function calculatePoints( cardNumber, blackjack )
+	{
+		var bust = false;
+		// points array contains the game points corresponding with each card drawn
+		// points are tallied as cards are drawn by the draw() function
+		playerPoints = playerPoints + points[ cardNumber ];
+
+		// ace is drawn
+		if ( points[ cardNumber ] == 11 )
+		{
+			aceFlagPlayer = true; 
+			
+			/*
+			if ( aceFlagPlayer == true )
+			{
+				playerPoints -= 10; // subsequent aces only worth 1, so subtract 10 from the points added from line 419
+			}
+			*/
+			
+		    // alert( "Line 420: I got an Ace!" );
+		    if ( playerPoints > 21 )
+		    {
+		        playerPoints -= 10;
+		    }
+		}
+
+		// document.getElementById( "dealerPoints" ).innerHTML = "Points: " + dealerPoints;
+		document.getElementById( "playerPoints" ).innerHTML = "Points: " + playerPoints;
+
+		// end game when bust
+		if ( playerPoints > 21 )
+		{
+			bust = true
+			gameEnd( blackjack, bust );
+
+			// alert( "I made it here at line 426!\n\n Player points are " + playerPoints + "\nblackjack = " + blackjack );
+
+		}
+
+	} // end function calculatePoints
+
+	// determine winner of game and display message
+	function gameEnd( blackjack, bust )
+	{
+		// alert( "I got called" );
+		if ( playerPoints > dealerPoints )
+		{
+			// make sure player did not bust
+			if ( playerPoints <= 21 )
+			{
+				if ( blackjack == false )
+				{
+					document.getElementById( "playerMessage" ).innerHTML = "WINNER!";
+					document.getElementById( "dealerMessage" ).innerHTML = "LOSER!";
+
+				} else { // player is dealt blackjack
+
+					document.getElementById( "playerMessage" ).innerHTML = "BLACKJACK!";
+					document.getElementById( "dealerMessage" ).innerHTML = "LOSER!";
+					blackjack = false;
+				}
+
+			} else { // player's points are greater than 21
+
+				document.getElementById( "playerMessage" ).innerHTML = "BUST!";
+				document.getElementById( "dealerMessage" ).innerHTML = "WINNER!";
+				document.getElementById( "dealerPoints" ).innerHTML = "Points: " + dealerPoints;
+				document.images[ 0 ].src = cards[ dealersCard ].src; // reveal dealer's hidden card
+			}
+
+		} else { // player points are equal or less than dealer points
+
+			if ( dealerPoints <= 21 ) // make sure dealer did not bust
+			{
+				// dealer is winner
+				if ( dealerPoints > playerPoints )
+				{
+					if ( blackjack == false )
+					{
+						document.getElementById( "playerMessage" ).innerHTML = "LOSER!";
+						document.getElementById( "dealerMessage" ).innerHTML = "WINNER!";
+
+					} else { // dealer is dealt blackjack
+
+						document.getElementById( "dealerMessage" ).innerHTML = "BLACKJACK!";
+						document.getElementById( "playerMessage" ).innerHTML = "LOSER!";
+						blackjack = false;
+					}
+				} else {
+
+					if ( dealerPoints == playerPoints ) // tie game
+					{
+						document.getElementById( "dealerMessage" ).innerHTML = "IT'S A DRAW";
+					}
+				}
+
+			} else { // dealer busts
+
+				document.getElementById( "playerMessage" ).innerHTML = "WINNER!";
+				document.getElementById( "dealerMessage" ).innerHTML = "BUST!";
+			}
+		}
+
+		// reset imageIndex to 8 (the place the first card hit appears)
+		imageIndex = 8;
+
+		document.getElementById( "stand" ).disabled = true;
+		document.getElementById( "hitMe" ).disabled = true;
+
+		document.getElementById( "dealerMessage" ).style.visibility = "visible";
+		document.getElementById( "playerMessage" ).style.visibility = "visible";
+
+		// display the playAgain button
+		document.getElementById( "playAgain" ).style.visibility = "visible";
+
+
+	} // end function gameEnd
+
+  </script>
+
+  <link rel = "stylesheet" href = "Blackjack.css" type = "text/css" />
+
+</head>
+<body onLoad = "start();">
+  <div id = "gameTop">
+    <h2 id = "dealerHeader">Dealer</h2>
+    <h2 id = "playerHeader">Player</h2>
+
+<!-- images for dealer row -->
+    <img src = "Images/CardBack.jpg" id = "dealerCard1" width = "108" height = "158" />
+    <img id = "dealerCard2" width = "108" height = "158" />
+	<img id = "dealerCard3" width = "108" height = "158" />
+	<img id = "dealerCard4" width = "108" height = "158" />
+	<img id = "dealerCard5" width = "108" height = "158" />
+	<img id = "dealerCard6" width = "108" height = "158" />
+
+	<p id = "dealerPoints">Points:</p>
+	<p id = "dealerMessage">dealer messages</p>
+
+<!-- images for player row -->
+    <img src = "Images/CardBack.jpg" id = "playerCard1" width = "108" height = "158" />
+    <img id = "playerCard2" width = "108" height = "158" />
+    <img id = "playerCard3" width = "108" height = "158" />
+    <img id = "playerCard4" width = "108" height = "158" />
+    <img id = "playerCard5" width = "108" height = "158" />
+    <img id = "playerCard6" width = "108" height = "158" />
+
+    <p id = "playerPoints">Points:</p>
+    <p id = "playerMessage">Player messages</p>
+
+	<button id = "hitMe" onClick = "draw();">Hit Me</button>
+	
+	<!-- pass false to stand button when stand is clicked because no one could have blackjack in that case -->
+	<button id = "stand" onClick = "stand( false );">Stand</button>
+	<button id = "playAgain" onClick = "start();">Play Again</button>
+	<input type = "text" id = "debugText" size = "25" />
+  </div>
+
+</body>
+</html>

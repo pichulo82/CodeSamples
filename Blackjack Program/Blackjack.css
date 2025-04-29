@@ -1,0 +1,204 @@
+
+#gameTop
+{
+    margin-top: 20px;
+    margin-left: 20px;
+
+    width: 800px;
+    height: 700px;
+    border: 4px #C2C2C2 inset;
+    background-color: #009900;
+}
+
+#dealerHeader
+{
+    position: absolute;
+    left: 50px;
+    top: 30px;
+    width: 100px;
+}
+
+#playerHeader
+{
+    position: absolute;
+    left: 50px;
+    top: 320px;
+    width: 100px;
+}
+
+#dealerPoints
+{
+    position: absolute;
+    left: 50px;
+    top: 270px;
+    font-size: 20px;
+}
+
+#playerPoints
+{
+    position: absolute;
+    left: 50px;
+    top: 560px;
+    font-size: 20px;
+}
+
+/* the paragraph to display the winner */
+#dealerMessage
+{
+    position: absolute;
+    top: 270px;
+    left: 168px;
+    font-size: 20px;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+/* the paragraph to display the winner */
+#playerMessage
+{
+    position: absolute;
+    top: 560px;
+    left: 168px;
+    font-size: 20px;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+#dealerCard1
+{
+    position: absolute;
+    left: 50px;
+    top: 100px;
+}
+
+#dealerCard2
+{
+    position: absolute;
+    left: 168px;
+    top: 100px;
+    visibility: hidden;
+}
+
+#dealerCard3
+{
+    position: absolute;
+    left: 288px;
+    top: 100px;
+    visibility: hidden;
+}
+
+#dealerCard4
+{
+    position: absolute;
+    left: 408px;
+    top: 100px;
+    visibility: hidden;
+}
+
+#dealerCard5
+{
+    position: absolute;
+    left: 528px;
+    top: 100px;
+    visibility: hidden;
+}
+
+#dealerCard6
+{
+    position: absolute;
+    left: 648px;
+    top: 100px;
+    visibility: hidden;
+}
+
+#playerCard1
+{
+    position: absolute;
+    left: 50px;
+    top: 390px;
+}
+
+#playerCard2
+{
+    position: absolute;
+    left: 168px;
+    top: 390px;
+    visibility: hidden;
+}
+
+#playerCard3
+{
+    position: absolute;
+    left: 288px;
+    top: 390px;
+    visibility: hidden;
+}
+
+#playerCard4
+{
+    position: absolute;
+    left: 408px;
+    top: 390px;
+    visibility: hidden;
+}
+
+#playerCard5
+{
+    position: absolute;
+    left: 528px;
+    top: 390px;
+    visibility: hidden;
+}
+
+#playerCard6
+{
+    position: absolute;
+    left: 648px;
+    top: 390px;
+    visibility: hidden;
+}
+
+/* style for Hit Me button */
+#hitMe
+{
+    position: absolute;
+    left: 50px;
+    top: 630px;
+    width: 135px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: "Cooper Black";
+}
+
+/* style for Stand button */
+#stand
+{
+    position: absolute;
+    left: 195px;
+    top: 630px;
+    width: 135px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: "Cooper Black";
+}
+
+/* style for Play Again button */
+#playAgain
+{
+    position: absolute;
+    left: 340px;
+    top: 630px;
+    width: 135px;
+    visibility: hidden;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: "Cooper Black";
+}
+
+/* style for debugText */
+#debugText
+{
+    position: absolute;
+    left: 50px;
+    top: 670px;
+}
