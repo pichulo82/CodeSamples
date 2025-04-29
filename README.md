@@ -8,3 +8,6 @@ Allows user to add the item to a shopping cart which stores the data in a server
 **Simon**
 A Windows-based Simon memory game created with C sharp.
 User tries to repeat the presented pattern and the pattern expands thereafter until it isn't entered correctly by user
+
+**Blackjack Program**
+Web-based Blackjack game created with Javascript
